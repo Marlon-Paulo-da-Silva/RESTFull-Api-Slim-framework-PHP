@@ -5,7 +5,7 @@ class DB {
   private $host = 'localhost';
   private $user = 'root';
   private $pass = '';
-  private $dbname = 'slim-api';
+  private $dbname = 'lojaapi';
 
   public function connect(){
     $conn_str = "mysql:host=$this->host;dbname=$this->dbname";
