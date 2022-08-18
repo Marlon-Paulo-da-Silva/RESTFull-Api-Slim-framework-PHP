@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 use Psr\Http\Message\MessageInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -13,6 +13,12 @@ $app->get('/', function(Request $request, Response $response, $args){
   $response->getBody()->write('Olá, Marlon');
   return $response;
 });
+
+$app->get('/pagina/{name}', function(Request $request, Response $response, $args){
+  $response->getBody()->write('Olá, Marlon, você está na página: ' . $args['name']);
+  return $response;
+});
+
 $app->get('/fruits', function(Request $request, Response $response, $args){
   $fruits = [
     '1' => 'Banana',
